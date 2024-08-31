@@ -33,11 +33,7 @@ npm-debug.log
 *.map
 
 # General
-<<<<<<< HEAD
 /explora_uchile_backend-venv/
-=======
-/{{project_name}}-venv/
->>>>>>> 37cb4d29a35886fe431d5797246534db912e0cc2
 /venv/
 /env/
 /output/

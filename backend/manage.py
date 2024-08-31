@@ -13,15 +13,9 @@ if __name__ == "__main__":
         if settings_module:
             print(
                 "Ignoring config('DJANGO_SETTINGS_MODULE') because it's test. "
-<<<<<<< HEAD
                 "Using 'explora_uchile_backend.settings.test'"
             )
         os.environ.setdefault("DJANGO_SETTINGS_MODULE", "explora_uchile_backend.settings.test")
-=======
-                "Using '{{project_name}}.settings.test'"
-            )
-        os.environ.setdefault("DJANGO_SETTINGS_MODULE", "{{project_name}}.settings.test")
->>>>>>> 37cb4d29a35886fe431d5797246534db912e0cc2
     else:
         if settings_module is None:
             print(

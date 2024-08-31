@@ -16,11 +16,7 @@ backend_format:
 
 # Commands for Docker version
 docker_setup:
-<<<<<<< HEAD
 	docker volume create explora_uchile_backend_dbdata
-=======
-	docker volume create {{project_name}}_dbdata
->>>>>>> 37cb4d29a35886fe431d5797246534db912e0cc2
 	docker compose build --no-cache backend
 	docker compose run --rm backend python manage.py spectacular --color --file schema.yml
 	docker compose run frontend npm install

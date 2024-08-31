@@ -1,5 +1,4 @@
 databases:
-<<<<<<< HEAD
   - name: explora_uchile_backend-postgres
     databaseName: explora_uchile_backend
     plan: free
@@ -8,33 +7,15 @@ databases:
 services:
   - type: redis
     name: explora_uchile_backend-redis
-=======
-  - name: {{project_name}}-postgres
-    databaseName: {{project_name}}
-    plan: free
-    user: {{project_name}}
-
-services:
-  - type: redis
-    name: {{project_name}}-redis
->>>>>>> 37cb4d29a35886fe431d5797246534db912e0cc2
     plan: free
     ipAllowList: [] # only allow internal connections
 
   - type: web
-<<<<<<< HEAD
     name: explora_uchile_backend
     plan: free
     runtime: python
     buildCommand: "./render_build.sh"
     startCommand: "poetry run gunicorn explora_uchile_backend.wsgi:application --chdir backend --limit-request-line 8188 --log-file -"
-=======
-    name: {{project_name}}
-    plan: free
-    runtime: python
-    buildCommand: "./render_build.sh"
-    startCommand: "poetry run gunicorn {{project_name}}.wsgi:application --chdir backend --limit-request-line 8188 --log-file -"
->>>>>>> 37cb4d29a35886fe431d5797246534db912e0cc2
     envVars:
       - key: ENABLE_DJANGO_COLLECTSTATIC
         value: 1
@@ -42,20 +23,12 @@ services:
         value: 1
       - key: DATABASE_URL
         fromDatabase:
-<<<<<<< HEAD
           name: explora_uchile_backend-postgres
-=======
-          name: {{project_name}}-postgres
->>>>>>> 37cb4d29a35886fe431d5797246534db912e0cc2
           property: connectionString
       - key: REDIS_URL
         fromService:
           type: redis
-<<<<<<< HEAD
           name: explora_uchile_backend-redis
-=======
-          name: {{project_name}}-redis
->>>>>>> 37cb4d29a35886fe431d5797246534db912e0cc2
           property: connectionString
       - fromGroup: python-services
       - fromGroup: integrations-credentials
@@ -68,11 +41,7 @@ services:
   #   runtime: python
   #   env: python
   #   buildCommand: poetry install
-<<<<<<< HEAD
   #   startCommand: "poetry run celery --workdir backend --app=explora_uchile_backend worker --loglevel=info --max-memory-per-child=$WORKER_MAX_MEMORY  --concurrency=$WORKER_CONCURRENCY"
-=======
-  #   startCommand: "poetry run celery --workdir backend --app={{project_name}} worker --loglevel=info --max-memory-per-child=$WORKER_MAX_MEMORY  --concurrency=$WORKER_CONCURRENCY"
->>>>>>> 37cb4d29a35886fe431d5797246534db912e0cc2
   #   envVars:
   #     - key: REMAP_SIGTERM
   #       value: SIGQUIT
@@ -104,20 +73,12 @@ services:
   #       sync: false
   #     - key: DATABASE_URL
   #       fromDatabase:
-<<<<<<< HEAD
   #         name: explora_uchile_backend-postgres
-=======
-  #         name: {{project_name}}-postgres
->>>>>>> 37cb4d29a35886fe431d5797246534db912e0cc2
   #         property: connectionString
   #     - key: REDIS_URL
   #       fromService:
   #         type: redis
-<<<<<<< HEAD
   #         name: explora_uchile_backend-redis
-=======
-  #         name: {{project_name}}-redis
->>>>>>> 37cb4d29a35886fe431d5797246534db912e0cc2
   #         property: connectionString
   #     - fromGroup: python-services
   #     - fromGroup: integrations-credentials
@@ -126,30 +87,18 @@ services:
   #   runtime: python
   #   env: python
   #   buildCommand: poetry install
-<<<<<<< HEAD
   #   startCommand: "poetry run celery --workdir backend --app=explora_uchile_backend beat --loglevel=info"
-=======
-  #   startCommand: "poetry run celery --workdir backend --app={{project_name}} beat --loglevel=info"
->>>>>>> 37cb4d29a35886fe431d5797246534db912e0cc2
   #   envVars:
   #     - key: REMAP_SIGTERM
   #       value: SIGQUIT
   #     - key: DATABASE_URL
   #       fromDatabase:
-<<<<<<< HEAD
   #         name: explora_uchile_backend-postgres
-=======
-  #         name: {{project_name}}-postgres
->>>>>>> 37cb4d29a35886fe431d5797246534db912e0cc2
   #         property: connectionString
   #     - key: REDIS_URL
   #       fromService:
   #         type: redis
-<<<<<<< HEAD
   #         name: explora_uchile_backend-redis
-=======
-  #         name: {{project_name}}-redis
->>>>>>> 37cb4d29a35886fe431d5797246534db912e0cc2
   #         property: connectionString
   #     - fromGroup: python-services
   #     - fromGroup: integrations-credentials
@@ -164,11 +113,7 @@ envVarGroups:
       - key: SECRET_KEY
         generateValue: true
       - key: DJANGO_SETTINGS_MODULE
-<<<<<<< HEAD
         value: explora_uchile_backend.settings.production
-=======
-        value: {{project_name}}.settings.production
->>>>>>> 37cb4d29a35886fe431d5797246534db912e0cc2
       - key: ALLOWED_HOSTS
         value: '*'
   - name: integrations-credentials

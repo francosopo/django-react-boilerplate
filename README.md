@@ -1,8 +1,4 @@
-<<<<<<< HEAD
 # EXPLORA UCHILE BACKEND
-=======
-# Django React Boilerplate
->>>>>>> 37cb4d29a35886fe431d5797246534db912e0cc2
 
 [![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-2.0-4baaaa.svg)](code_of_conduct.md)
 [![License: MIT](https://img.shields.io/github/license/vintasoftware/django-react-boilerplate.svg)](LICENSE.txt)
@@ -82,7 +78,6 @@ Send us an email at contact@vintasoftware.com telling us a bit more about how ou
 -   [ ] Open the command line and go to the directory you want to start your project in
 -   [ ] Start your project using (replace `project_name` with your project name and remove the curly braces):
     ```
-<<<<<<< HEAD
     django-admin startproject explora_uchile_backend --extension py,json,yml,yaml,toml --name Dockerfile,README.md,.env.example,.gitignore,Makefile --template=https://github.com/vintasoftware/django-react-boilerplate/archive/refs/heads/main.zip
     ```
     Alternatively, you may start the project in the current directory by placing a `.` right after the project name, using the following command:
@@ -95,20 +90,6 @@ In the next steps, always remember to replace explora_uchile_backend with your p
 -   [ ] Change the first line of README to the name of the project
 -   [ ] Add an email address to the `ADMINS` settings variable in `explora_uchile_backend/backend/explora_uchile_backend/settings/base.py`
 -   [ ] Change the `SERVER_EMAIL` to the email address used to send e-mails in `explora_uchile_backend/backend/explora_uchile_backend/settings/production.py`
-=======
-    django-admin startproject {{project_name}} --extension py,json,yml,yaml,toml --name Dockerfile,README.md,.env.example,.gitignore,Makefile --template=https://github.com/vintasoftware/django-react-boilerplate/archive/refs/heads/main.zip
-    ```
-    Alternatively, you may start the project in the current directory by placing a `.` right after the project name, using the following command:
-    ```
-    django-admin startproject {{project_name}} . --extension py,json,yml,yaml,toml --name Dockerfile,README.md,.env.example,.gitignore,Makefile --template=https://github.com/vintasoftware/django-react-boilerplate/archive/refs/heads/main.zip
-    ```
-In the next steps, always remember to replace {{project_name}} with your project's name (in case it isn't yet):
--   [ ] Above: don't forget the `--extension` and `--name` params!
--   [ ] Go into project's root directory: `cd {{project_name}}`
--   [ ] Change the first line of README to the name of the project
--   [ ] Add an email address to the `ADMINS` settings variable in `{{project_name}}/backend/{{project_name}}/settings/base.py`
--   [ ] Change the `SERVER_EMAIL` to the email address used to send e-mails in `{{project_name}}/backend/{{project_name}}/settings/production.py`
->>>>>>> 37cb4d29a35886fe431d5797246534db912e0cc2
 
 After completing ALL of the above, remove this `Project bootstrap` section from the project README. Then follow `Running` below.
 
@@ -122,21 +103,13 @@ After completing ALL of the above, remove this `Project bootstrap` section from 
 
 -   Do the following:
     -   Create a git-untracked `local.py` settings file:
-<<<<<<< HEAD
         `cp backend/explora_uchile_backend/settings/local.py.example backend/explora_uchile_backend/settings/local.py`
-=======
-        `cp backend/{{project_name}}/settings/local.py.example backend/{{project_name}}/settings/local.py`
->>>>>>> 37cb4d29a35886fe431d5797246534db912e0cc2
     -   Create a git-untracked `.env.example` file:
         `cp backend/.env.example backend/.env`
 
 ### If you are using Docker:
 
-<<<<<<< HEAD
 -   Open the `backend/.env` file on a text editor and uncomment the line `DATABASE_URL=postgres://explora_uchile_backend:password@db:5432/explora_uchile_backend`
-=======
--   Open the `backend/.env` file on a text editor and uncomment the line `DATABASE_URL=postgres://{{project_name}}:password@db:5432/{{project_name}}`
->>>>>>> 37cb4d29a35886fe431d5797246534db912e0cc2
 -   Open a new command line window and go to the project's directory
 -   Run the initial setup:
     `make docker_setup`
@@ -171,11 +144,7 @@ After completing ALL of the above, remove this `Project bootstrap` section from 
 
 -   Open the `backend/.env` file on a text editor and do one of the following:
     -   If you wish to use SQLite locally, uncomment the line `DATABASE_URL=sqlite:///db.sqlite3`
-<<<<<<< HEAD
     -   If you wish to use PostgreSQL locally, uncomment and edit the line `DATABASE_URL=postgres://explora_uchile_backend:password@db:5432/explora_uchile_backend` in order to make it correctly point to your database URL
-=======
-    -   If you wish to use PostgreSQL locally, uncomment and edit the line `DATABASE_URL=postgres://{{project_name}}:password@db:5432/{{project_name}}` in order to make it correctly point to your database URL
->>>>>>> 37cb4d29a35886fe431d5797246534db912e0cc2
         -   The url format is the following: `postgres://USER:PASSWORD@HOST:PORT/NAME`
     -   If you wish to use another database engine locally, add a new `DATABASE_URL` setting for the database you wish to use
         -   Please refer to [dj-database-url](https://github.com/jazzband/dj-database-url#url-schema) on how to configure `DATABASE_URL` for commonly used engines
@@ -206,11 +175,7 @@ After completing ALL of the above, remove this `Project bootstrap` section from 
 
 #### Setup Celery
 
-<<<<<<< HEAD
 -   `poetry run celery --app=explora_uchile_backend worker --loglevel=info`
-=======
--   `poetry run celery --app={{project_name}} worker --loglevel=info`
->>>>>>> 37cb4d29a35886fe431d5797246534db912e0cc2
 
 #### Setup Redis
 
@@ -294,15 +259,9 @@ Keep reading to learn how to configure the prompted environment variables.
 
 #### `ALLOWED_HOSTS`
 
-<<<<<<< HEAD
 Chances are your project name isn't unique in Render, and you'll get a randomized suffix as your full app URL like: `https://explora_uchile_backend-a1b2.onrender.com`.
 
 But this will only happen after the first deploy, so you are not able to properly fill `ALLOWED_HOSTS` yet. Simply set it to `*` then fix it later to something like `explora_uchile_backend-a1b2.onrender.com` and your domain name like `example.org`.
-=======
-Chances are your project name isn't unique in Render, and you'll get a randomized suffix as your full app URL like: `https://{{project_name}}-a1b2.onrender.com`.
-
-But this will only happen after the first deploy, so you are not able to properly fill `ALLOWED_HOSTS` yet. Simply set it to `*` then fix it later to something like `{{project_name}}-a1b2.onrender.com` and your domain name like `example.org`.
->>>>>>> 37cb4d29a35886fe431d5797246534db912e0cc2
 
 #### `ENABLE_DJANGO_COLLECTSTATIC`
 
