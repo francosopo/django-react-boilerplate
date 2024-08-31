@@ -1,5 +1,9 @@
 [tool.poetry]
+<<<<<<< HEAD
 name = "explora_uchile_backend"
+=======
+name = "{{project_name}}"
+>>>>>>> 37cb4d29a35886fe431d5797246534db912e0cc2
 version = "0.1.0"
 description = "Django 5, React, Bootstrap 5 with Python 3 and webpack project boilerplate"
 authors = ["Vinta Software <contact@vinta.com.br>"]

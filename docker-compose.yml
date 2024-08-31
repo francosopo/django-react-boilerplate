@@ -4,9 +4,15 @@ services:
   db:
     image: "postgres:alpine"
     environment:
+<<<<<<< HEAD
       - POSTGRES_USER=explora_uchile_backend
       - POSTGRES_PASSWORD=password
       - POSTGRES_DB=explora_uchile_backend
+=======
+      - POSTGRES_USER={{project_name}}
+      - POSTGRES_PASSWORD=password
+      - POSTGRES_DB={{project_name}}
+>>>>>>> 37cb4d29a35886fe431d5797246534db912e0cc2
     ports:
       - "5432"
     volumes:
@@ -49,7 +55,11 @@ services:
     build:
       dockerfile: backend/Dockerfile
       context: .
+<<<<<<< HEAD
     command: celery --app=explora_uchile_backend worker --loglevel=info
+=======
+    command: celery --app={{project_name}} worker --loglevel=info
+>>>>>>> 37cb4d29a35886fe431d5797246534db912e0cc2
     volumes:
       - ./:/home/user/app/
     env_file: backend/.env
@@ -66,5 +76,9 @@ services:
 
 volumes:
   dbdata:
+<<<<<<< HEAD
     name: explora_uchile_backend_dbdata
+=======
+    name: {{project_name}}_dbdata
+>>>>>>> 37cb4d29a35886fe431d5797246534db912e0cc2
     external: true

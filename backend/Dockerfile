@@ -27,4 +27,8 @@ WORKDIR /home/user/app/backend
 COPY backend/ /home/user/app/backend
 
 USER user
+<<<<<<< HEAD
 CMD gunicorn explora_uchile_backend.wsgi --log-file - -b 0.0.0.0:8000 --reload
+=======
+CMD gunicorn {{project_name}}.wsgi --log-file - -b 0.0.0.0:8000 --reload
+>>>>>>> 37cb4d29a35886fe431d5797246534db912e0cc2

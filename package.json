@@ -1,8 +1,15 @@
 {
+<<<<<<< HEAD
   "name": "explora_uchile_backend-frontend",
   "version": "0.0.1",
   "private": true,
   "description": "explora_uchile_backend frontend.",
+=======
+  "name": "{{project_name}}-frontend",
+  "version": "0.0.1",
+  "private": true,
+  "description": "{{project_name}} frontend.",
+>>>>>>> 37cb4d29a35886fe431d5797246534db912e0cc2
   "engines": {
     "node": ">=20 <21"
   },
